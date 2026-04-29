@@ -1,0 +1,118 @@
+:root {
+    --bg-color:white;
+    --bg-color-1:white;
+    --text-color:#111517;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+.dark {
+    --bg-color:#202C36;
+    --bg-color-1:#2B3844;
+    --text-color:white;
+}
+.hidden {
+    display: none;
+}
+a {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.container {
+    max-width: 1440px;
+    width: 100%;
+    margin: 0px auto;
+    padding: 23px 80px 24px 81px;
+}
+header {
+    box-shadow: 0px 2px 4px 0px #0000000E;
+    background-color: var(--bg-color-1);
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    div {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        cursor: pointer;
+    }
+}
+main {
+    display: flex;
+    justify-content: space-between;
+    div:first-child {
+        img {
+            width: 18px;
+            height: 18px;
+        }
+        box-shadow: 0px 2px 9px 0px #0000000E;
+        background-color: var(--bg-color-1);
+        width: 480px;
+        height: 56px;
+        color: white;
+        border: none;
+        padding: 0px 20px;
+        display: flex;
+        align-items: center;
+        input {
+        background-color: var(--bg-color-1);
+        border: none;
+        padding: 20px;
+        }
+    }
+    div:last-child {
+        box-shadow: 0px 2px 9px 0px #0000000E;
+        background-color: var(--bg-color-1);
+        width: 200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 18px;
+        h3 {
+            font-size: 14px;
+            line-height: 20px;
+            height: 56px;
+            padding: 18px;
+        }
+        p {
+            display: none;
+        }
+    }
+    div:last-child:hover {
+        p {
+            display: block;
+        }
+    }
+}
+.countries {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 55px;
+    .country {
+        box-shadow: 0px 2px 9px 0px #0000000E;
+    }
+}
+.country {
+    background-color: var(--bg-color-1);
+    width: 267px;
+    overflow: hidden;
+    border-radius: 5px;
+    padding-bottom: 46px;
+    p {
+        margin-left: 24px;
+        margin-top: 8px;
+    }
+    h2 {
+        margin-left: 24px;
+        margin-bottom: 8px;
+    }
+}
