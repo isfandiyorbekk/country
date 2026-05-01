@@ -16,7 +16,7 @@ const countries = [
     image: "/amerika.svg",
     name: "United States of America",
     population: 323947000,
-    region: "Americas",
+    region: "America",
     sub_region: "North America",
     capital: "Washington, D.C.",
     domain: ".us",

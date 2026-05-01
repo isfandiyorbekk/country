@@ -2,6 +2,8 @@ import countries from './main.js';
 const DarkBtn = document.querySelector('#dark-btn');
 const LigthBtn = document.querySelector('#ligth-btn');
 const Coutries = document.querySelector('.countries');
+const input = document.querySelector('#input')
+const selectEl = document.querySelector('#select')
 if (localStorage.getItem("mode") === "dark") {
     document.body.classList.add('dark');
 }
@@ -24,7 +26,9 @@ LigthBtn.addEventListener('click', () => {
     LigthBtn.classList.add('hidden');
     localStorage.setItem('btn','light');
 });
-countries.forEach((country) => {
+function updata(county) {
+    Coutries.innerHTML = "";
+    county.forEach((country) => {
     Coutries.innerHTML += `<div class="country">
           <img
             src="${country.image}"
@@ -35,4 +39,32 @@ countries.forEach((country) => {
           <p>Region: <span>${country.region}</span></p>
           <p>Capital: <span>${country.capital}</span></p>
         </div>`
+});
+};
+updata(countries);
+ input.addEventListener('input', (e) => {
+    Coutries.innerHTML = "";
+    let inputVal = e.target.value.trim().toLowerCase();
+    if (inputVal !== "") {
+        let search = countries.find((item) => {
+        return item.name.toLowerCase().startsWith(inputVal);
+    });
+    if (search) {
+        updata([search]); 
+    } else {
+        Coutries.innerHTML = `<h1 style="text-align: center; width: 100%;">No data</h1>`;
+    }
+    } else {
+        updata(countries);
+    }
+});
+selectEl.addEventListener('change', (e) => {
+    if (e.target.value === 'All') {
+        updata(countries);
+    } else {
+        let filtered = countries.filter((item) => {
+        return e.target.value === item.region;
+    });
+    updata(filtered);
+    }
 });

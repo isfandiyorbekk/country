@@ -20,6 +20,19 @@ body {
 .hidden {
     display: none;
 }
+.no-data {
+    text-align: center;
+}
+#select {
+    width: 200px;
+    height: 56px;
+    padding-left: 24px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 9px 0px #0000000E;
+    background-color: var(--bg-color-1);
+    border: none;
+    color: var(--text-color);
+}
 a {
     cursor: pointer;
     display: flex;
@@ -92,6 +105,11 @@ main {
             display: block;
         }
     }
+    input:focus {
+        outline: none;
+        border: none;
+        box-shadow: none;
+}
 }
 .countries {
     display: flex;
